@@ -17,7 +17,7 @@ Noteworthy
 Volumes
 -------
 
-* `/subsonic` --- Directory to store Subsonic's log, configuration and database
+* `/data` --- Directory to store Subsonic's log, configuration and database
 * `/music` --- Default music folder
 * `/podcasts` --- Default podcast folder
 * `/playlists` --- Default playlist folder
@@ -58,6 +58,7 @@ Run a container with this image
 $ docker run \
   --detach \
   --publish 8080:8080 \
+  --volume "/local/config/dir:/data/" \
   --volume "/wherever/your/music/is:/music/:ro" \
   <your-name>/subsonic
 
